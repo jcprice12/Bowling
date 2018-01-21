@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Frame {
 	
+	private static final int MAX = 10;
 	private ArrayList<Integer> rolls;
 	
 	public Frame(ArrayList<Integer> rolls) {
@@ -20,6 +21,10 @@ public class Frame {
 		return this.rolls;
 	}
 	
+	public void setRolls(ArrayList<Integer> rolls) {
+		this.rolls = rolls;
+	}
+	
 	public int getFirstRoll() {
 		return this.rolls.get(0);
 	}
@@ -28,15 +33,27 @@ public class Frame {
 		return this.rolls.get(1);
 	}
 	
-	public int getBaseTotal() {
-		return getFirstRoll() + getSecondRoll();
+	public int getThirdRoll() {
+		if(getRolls().size() == 3) {
+			return getRolls().get(2);
+		}
+		return 0;
 	}
 	
 	public boolean isStrike() {
-		return getFirstRoll() == 10 ? true : false;
+		return getFirstRoll() == MAX ? true : false;
 	}
 	
 	public boolean isSpare() {
-		return !isStrike() && (getBaseTotal() == 10) ? true : false; 
+		return !isStrike() && (getBaseTotal() == MAX) ? true : false; 
+	}
+	
+	public int getBaseTotal() {
+		int total = 0;
+		total += getFirstRoll();
+		if(!isStrike()) {
+			total += getSecondRoll();
+		}
+		return total;
 	}
 }

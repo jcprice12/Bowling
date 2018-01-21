@@ -13,18 +13,18 @@ public class TestFrame {
 	@Test
 	public void testIsStrike() {
 		Frame frame = new Frame(new ArrayList<>(Arrays.asList(10,0)));
-		assertEquals(frame.isStrike(), true);
+		assertEquals(true, frame.isStrike());
 	}
 	
 	@Test
 	public void testIsSpare() {
 		Frame frame = new Frame(new ArrayList<>(Arrays.asList(3,7)));
-		assertEquals(frame.isSpare(), true);
+		assertEquals(true, frame.isSpare());
 	}
 	
 	@Test
 	public void testGetTotal() {
 		Frame frame = new Frame(new ArrayList<>(Arrays.asList(3,5)));
-		assertEquals(frame.getBaseTotal(), 8);
+		assertEquals(8, frame.getBaseTotal());
 	}
 }
