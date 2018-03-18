@@ -10,7 +10,7 @@ import org.junit.Test;
 import com.john.price.bowling.classes.Frame;
 import com.john.price.bowling.classes.Line;
 
-public class TestLineScores {
+public class TestLine {
 
 	@Test
 	public void testAllGutters() {	
